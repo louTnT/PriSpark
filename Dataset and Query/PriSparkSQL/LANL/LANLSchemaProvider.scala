@@ -63,8 +63,6 @@ class LANLSchemaProvider_Original(spark: SparkSession, inputDir: String) {
   Dns.write.mode("overwrite").saveAsTable("dns")
   Redteam.write.mode("overwrite").saveAsTable("redteam")
 
-  //  Redteam.show(false)
-
   val time2 = System.currentTimeMillis()
 
   //  println(spark.catalog.currentDatabase)

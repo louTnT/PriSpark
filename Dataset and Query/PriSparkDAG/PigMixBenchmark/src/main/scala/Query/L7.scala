@@ -18,8 +18,6 @@ object L7 {
 
     val sc = spark.sparkContext
 
-    //    val path = "/Users/lou/Documents/IDEAProjects/UnstructuredDP/PigMixBenchmark/src/main/resources/"
-    //    val path = "/PigMix/16G/"
     val path = "/PigMix/80G/"
     val pageViewsPath = path + "page_views/"
     val powerUsersPath = path + "power_users/"
@@ -30,11 +28,8 @@ object L7 {
     val A = pageViews.map(x => (x.split(",")(0), x.split(",")(5)))
     //    A.take(5).foreach(println)
 
-    val B = A.filter(x => x._2.toLong > 0 )  //99200924340550326
+    val B = A.filter(x => x._2.toLong > 0 ) 
     println(B.count())
-    //    val E = A.filter(x => x._2.toLong < 0 )
-    //    println(E.count())
-
 
     val C = B.groupByKey()
     //    C.take(5).foreach(println)

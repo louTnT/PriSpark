@@ -21,8 +21,6 @@ object L2 {
 
     //    println(System.currentTimeMillis())
 
-    //    val path = "/Users/lou/Documents/IDEAProjects/UnstructuredDP/src/main/resources/PigMix/"
-    //    val path = "/PigMix/16G/"
     val path = "/PigMix/80G/"
     val pageViewsPath = path + "page_views/"
     val powerUsersPath = path + "power_users/"
@@ -32,7 +30,6 @@ object L2 {
 
     //    println(pageViews.getNumPartitions)
     //    println(powerUsers.getNumPartitions)
-
 
     val A = pageViews.map(x => (x.split(",")(0), x.split(",")(6)))   
     //    A.take(5).foreach(println)
@@ -47,13 +44,7 @@ object L2 {
     val beta = alpha.map(x => (x, 1))
     //    beta.take(5).foreach(println)
 
-    //    println("A: " + A.count())
-    //    println("beta: " + beta.count())
-
-
     val C = A.join(beta).map(x => (x._1, x._2._1))  
-    //    C.collect.foreach(println)
-    //    val C = beta.join(A).map(x => (x._1, x._2._1))  
     val c = C.count()
 
     println("realNum: ", c)

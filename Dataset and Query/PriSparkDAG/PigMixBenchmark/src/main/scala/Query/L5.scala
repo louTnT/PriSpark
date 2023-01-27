@@ -22,8 +22,6 @@ object L5 {
 
     val sc = spark.sparkContext
 
-    //    val path = "/Users/lou/Documents/IDEAProjects/UnstructuredDP/PigMixBenchmark/src/main/resources/"
-    //    val path = "/PigMix/16G/"
     val path = "/PigMix/80G/"
     val pageViewsPath = path + "page_views/"
     val powerUsersPath = path + "power_users/"
